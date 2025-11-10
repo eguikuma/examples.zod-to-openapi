@@ -1,0 +1,58 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Next.js example project using zodocs for API documentation",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "package:deps": "ncu",
+    "package:update": "ncu -i",
+    "package:update:force": "ncu -u",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint --fix .",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "tsc": "tsc --noEmit",
+    "ci": "npm run prettier:fix && npm run eslint:fix && npm run tsc && npm run prisma:format && npm run docs",
+    "docs": "zodocs",
+    "prisma:format": "npx prisma format",
+    "prisma:migrate": "npx prisma migrate dev",
+    "prisma:generate": "npx prisma generate",
+    "prisma:seed": "npx prisma db seed",
+    "prisma:fresh": "prisma migrate reset --force",
+    "prisma:studio": "npx prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "next": "16.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "lodash": "^4.17.21",
+    "npm-check-updates": "^19.1.2",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prisma": "^6.19.0",
+    "sql-formatter": "^15.6.10",
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.20.6",
+    "type-fest": "^5.2.0",
+    "typescript": "^5.9.3",
+    "zod": "^4.1.12",
+    "zodocs": "*"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}
